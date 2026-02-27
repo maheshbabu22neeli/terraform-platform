@@ -12,8 +12,6 @@ resource "aws_internet_gateway" "igw" {
   tags = local.igw_final_tags
 }
 
-
-
 resource "aws_subnet" "public" {
   count = length(var.public_subnet_cidrs)
 
