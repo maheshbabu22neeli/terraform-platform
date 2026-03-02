@@ -65,3 +65,13 @@ variable "route_table_database_tags" {
   type    = map(string)
   default = {}
 }
+
+variable "eip_nat_tags" {
+  type    = map(string)
+  default = {}
+}
+
+variable "nat_gw_tags" {
+  type    = map(string)
+  default = {}
+}

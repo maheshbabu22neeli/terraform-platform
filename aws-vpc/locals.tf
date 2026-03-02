@@ -54,4 +54,15 @@ locals {
     local.common_tags,
     var.route_table_database_tags
   )
+
+  eip_nat_final_tags = merge(
+    local.common_tags,
+    var.eip_nat_tags
+  )
+
+  nat_gw_final_tags = merge(
+    local.common_tags,
+    var.nat_gw_tags
+  )
+
 }
