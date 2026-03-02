@@ -39,4 +39,19 @@ locals {
     local.common_tags,
     var.database_subnet_tags
   )
+
+  route_table_public_final_tags = merge(
+    local.common_tags,
+    var.route_table_public_tags
+  )
+
+  route_table_private_final_tags = merge(
+    local.common_tags,
+    var.route_table_private_tags
+  )
+
+  route_table_database_final_tags = merge(
+    local.common_tags,
+    var.route_table_database_tags
+  )
 }

@@ -60,3 +60,39 @@ resource "aws_subnet" "database" {
     }
   )
 }
+
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.route_table_public_final_tags,
+    {
+      # roboshop-dev-public
+      Name = "${var.project}-${var.environment}-public"
+    }
+  )
+}
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.route_table_private_final_tags,
+    {
+      # roboshop-dev-private
+      Name = "${var.project}-${var.environment}-private"
+    }
+  )
+}
+
+resource "aws_route_table" "database" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.route_table_database_final_tags,
+    {
+      # roboshop-dev-database
+      Name = "${var.project}-${var.environment}-database"
+    }
+  )
+}

@@ -50,3 +50,18 @@ variable "database_subnet_tags" {
   type    = map(string)
   default = {}
 }
+
+variable "route_table_public_tags" {
+  type    = map(string)
+  default = {}
+}
+
+variable "route_table_private_tags" {
+  type    = map(string)
+  default = {}
+}
+
+variable "route_table_database_tags" {
+  type    = map(string)
+  default = {}
+}
