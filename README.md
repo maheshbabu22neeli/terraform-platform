@@ -1,10 +1,10 @@
 # terraform-platform
 terraform-platform is to create all aws resources
 
-## AWS-VPC Architecture
+# AWS-VPC Architecture
 ![AWS_VPC.drawio.svg](aws-vpc/images/AWS_VPC.drawio.svg)
 
-# Features
+## Features
 - VPC with configurable CIDR block and DNS hostname support
 - Public, private, and database subnet tiers across multiple Availability Zones
 - Internet Gateway for public subnets
