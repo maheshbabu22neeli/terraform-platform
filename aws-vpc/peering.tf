@@ -56,7 +56,7 @@ resource "aws_route" "database_peering" {
   vpc_peering_connection_id = aws_vpc_peering_connection.default[count.index].id
 }
 
-// this is at roboshop-dev side routes, adding default vpc details here
+// this is at default vpc side, adding roboshop vpc id details
 resource "aws_route" "default_peering" {
 
   count = var.is_peering_required ? 1 : 0
