@@ -1,6 +1,6 @@
 
 
-# AWS-VPC Architecture
+# AWS-VPC ArchitectureVPC
 ![AWS_VPC.drawio.svg](images/AWS_VPC.drawio.svg)
 
 ## Features
