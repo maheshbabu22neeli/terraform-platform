@@ -1,3 +1,4 @@
+// create VPC
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cider
   instance_tenancy     = "default"
@@ -6,12 +7,14 @@ resource "aws_vpc" "main" {
   tags = local.vpc_final_tags
 }
 
+// create Internet Gateway
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
 
   tags = local.igw_final_tags
 }
 
+// create Subnet's
 resource "aws_subnet" "public" {
   count = length(var.public_subnet_cidrs)
 
@@ -61,6 +64,7 @@ resource "aws_subnet" "database" {
   )
 }
 
+// create Route Tables
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
@@ -97,6 +101,7 @@ resource "aws_route_table" "database" {
   )
 }
 
+// create Route's for Route Tables
 resource "aws_route" "public" {
   route_table_id         = aws_route_table.public.id
   destination_cidr_block = "0.0.0.0/0" # Providing Internet Access

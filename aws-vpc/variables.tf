@@ -75,3 +75,13 @@ variable "nat_gw_tags" {
   type    = map(string)
   default = {}
 }
+
+variable "is_peering_required" {
+  type = bool
+  default = false
+}
+
+variable "peering_vpc_tags" {
+  type    = map(string)
+  default = {}
+}
